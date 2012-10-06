@@ -19,11 +19,6 @@
        "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">" "\n"
        "<plist version=\"1.0\">" "\n"))
 
-(defn coords-xml [x]
-  (hash-map
-   :tag :array :content
-   (vec (map #(hash-map :tag :string :content [(str "{" (first %) "," (second %) "}")]) (rest x)))))
-
 (defn emit-sprite-metadata [imagename w h ]
   {:tag :dict :content
    [{:tag :key :content ["format"]}
@@ -59,10 +54,6 @@
 (defn write-spritemap-plist [filename sprites image-name image-width image-height]
   (spit filename (str (write-plist-header) (.replace (with-out-str (emit-spritemap-plist sprites image-name image-width image-height)) "\n" "") "</plist>")))
   
-
-;; TODOS:
-;; main-method 
-
 (defn convert [filename outname]
   (let [lines (.split (slurp filename) "\n")
         file (java.io.File. filename)
@@ -75,7 +66,6 @@
     (println "convert" filename "to" outname)
     (write-spritemap-plist outname sprites image-name image-width image-height)
     (println "done!")))
-
 
 (defn -main [& args]
   (if (not (= (count args) 2))
