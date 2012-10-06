@@ -1,0 +1,17 @@
+# gdxtococos
+
+Converts LibGDX TexturePacker2 .atlas files to Cocos2D readable .plist format
+
+Make sure that the .png referenced from the .atlas file can be found so 
+gdxtococos2d can read the image dimensions
+
+## Usage
+
+java -jar gdxtococos2d-0.0.1-standalone.jar <inputfile>.atlas <outputfile>.atlas
+
+
+## License
+
+Copyright (C) 2012 thomas@friendlyvillagers.com
+
+Distributed under the Eclipse Public License, the same as Clojure.
