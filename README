@@ -7,7 +7,7 @@ gdxtococos2d can read the image dimensions
 
 ## Usage
 
-java -jar gdxtococos2d-0.0.1-standalone.jar <inputfile>.atlas <outputfile>.atlas
+java -jar gdxtococos2d-0.0.1-standalone.jar <inputfile>.atlas <outputfile>.plist 
 
 
 ## License
